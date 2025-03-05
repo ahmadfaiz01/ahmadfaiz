@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { Github, Linkedin, Mail, Twitter, Headphones, Code, Book, Coffee, Globe, ArrowUpRight } from "lucide-react";
+import { Github, Linkedin, Mail, Twitter, Headphones, Code, Book, Coffee, Globe, ArrowUpRight, Leaf, Sprout, Clover } from "lucide-react";
 
 const Index = () => {
   const [time, setTime] = useState(new Date());
@@ -18,7 +18,7 @@ const Index = () => {
           <div>
             <h2 className="text-sm text-gray-400 mb-2">welcome</h2>
             <h1 className="text-4xl font-bold mb-4">
-              Hi, I'm <span className="text-[#e2e2e2]">Ahmad Faiz</span>
+              Hi, I'm <span className="accent-text">Ahmad Faiz</span>
             </h1>
             <p className="text-gray-300 text-lg">
               A software developer with a passion for creating beautiful and functional web experiences
@@ -54,19 +54,19 @@ const Index = () => {
           </p>
           <ul className="list-inside space-y-2 mb-6">
             <li className="flex items-center space-x-2">
-              <span className="text-gray-300 text-sm">•</span>
+              <span className="text-[#2ecc71] text-sm">•</span>
               <span className="text-gray-300">React</span>
             </li>
             <li className="flex items-center space-x-2">
-              <span className="text-gray-300 text-sm">•</span>
+              <span className="text-[#2ecc71] text-sm">•</span>
               <span className="text-gray-300">TypeScript</span>
             </li>
             <li className="flex items-center space-x-2">
-              <span className="text-gray-300 text-sm">•</span>
+              <span className="text-[#2ecc71] text-sm">•</span>
               <span className="text-gray-300">Node.js</span>
             </li>
             <li className="flex items-center space-x-2">
-              <span className="text-gray-300 text-sm">•</span>
+              <span className="text-[#2ecc71] text-sm">•</span>
               <span className="text-gray-300">Tailwind CSS</span>
             </li>
           </ul>
@@ -88,7 +88,7 @@ const Index = () => {
           <p className="text-4xl font-mono font-bold">
             {time.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false })}
             {" "}
-            <span className="text-gray-400">MYT</span>
+            <span className="accent-text">MYT</span>
           </p>
         </div>
 
@@ -104,16 +104,24 @@ const Index = () => {
           
           <div className="space-y-1 mt-6">
             <p className="text-sm text-gray-400">Socials</p>
-            <p className="text-gray-300">Linkedin</p>
-            <p className="text-gray-300">Github</p>
+            <p className="text-gray-300">
+              <a href="https://www.linkedin.com/in/ahmadfaiz01/" className="hover:accent-text" target="_blank" rel="noopener noreferrer">
+                Linkedin
+              </a>
+            </p>
+            <p className="text-gray-300">
+              <a href="https://github.com" className="hover:accent-text" target="_blank" rel="noopener noreferrer">
+                Github
+              </a>
+            </p>
           </div>
         </div>
 
         {/* Now Card */}
-        <div className="bento-card">
+        <div className="bento-card accent-bg">
           <div className="flex items-center mb-4">
             <h2 className="text-xl font-bold">Now</h2>
-            <div className="ml-2 w-2 h-2 rounded-full bg-green-500"></div>
+            <div className="ml-2 w-2 h-2 rounded-full bg-[#2ecc71]"></div>
           </div>
           <p className="text-sm text-gray-400 mb-4">what's that?</p>
           
@@ -121,19 +129,19 @@ const Index = () => {
           
           <div className="space-y-4 mt-6">
             <div className="flex items-center space-x-3">
-              <Code className="text-gray-400 w-5 h-5" />
+              <Code className="text-[#2ecc71] w-5 h-5" />
               <span className="text-gray-300">Building a web app with React</span>
             </div>
             <div className="flex items-center space-x-3">
-              <Book className="text-gray-400 w-5 h-5" />
+              <Book className="text-[#2ecc71] w-5 h-5" />
               <span className="text-gray-300">Learning cloud architecture</span>
             </div>
             <div className="flex items-center space-x-3">
-              <Headphones className="text-gray-400 w-5 h-5" />
+              <Headphones className="text-[#2ecc71] w-5 h-5" />
               <span className="text-gray-300">Listening to tech podcasts</span>
             </div>
             <div className="flex items-center space-x-3">
-              <Coffee className="text-gray-400 w-5 h-5" />
+              <Coffee className="text-[#2ecc71] w-5 h-5" />
               <span className="text-gray-300">Drinking too much coffee</span>
             </div>
           </div>
@@ -147,22 +155,40 @@ const Index = () => {
           </div>
           
           <div className="flex items-center justify-center">
-            <Globe className="w-12 h-12 text-gray-400" />
+            <Globe className="w-12 h-12 text-[#2ecc71]" />
+          </div>
+          
+          <div className="mt-4 flex flex-wrap gap-2">
+            <span className="px-2 py-1 rounded-md text-xs bg-[rgba(46,204,113,0.1)] text-[#2ecc71]">Malaysia</span>
+            <span className="px-2 py-1 rounded-md text-xs bg-[rgba(46,204,113,0.1)] text-[#2ecc71]">Singapore</span>
+            <span className="px-2 py-1 rounded-md text-xs bg-[rgba(46,204,113,0.1)] text-[#2ecc71]">Thailand</span>
+            <span className="px-2 py-1 rounded-md text-xs bg-[rgba(46,204,113,0.1)] text-[#2ecc71]">Vietnam</span>
           </div>
         </div>
 
-        {/* Projects Card */}
+        {/* Blog Card */}
         <div className="bento-card col-span-1">
           <div className="flex justify-between items-center mb-6">
             <h2 className="text-xl font-bold">Blog</h2>
-            <ArrowUpRight className="w-5 h-5 text-gray-400" />
+            <ArrowUpRight className="w-5 h-5 text-[#2ecc71]" />
+          </div>
+          
+          <div className="space-y-4">
+            <div className="group">
+              <h3 className="text-gray-300 group-hover:text-[#2ecc71] transition-colors">Building React Apps in 2023</h3>
+              <p className="text-gray-500 text-sm">June 12, 2023</p>
+            </div>
+            <div className="group">
+              <h3 className="text-gray-300 group-hover:text-[#2ecc71] transition-colors">TypeScript Best Practices</h3>
+              <p className="text-gray-500 text-sm">May 8, 2023</p>
+            </div>
           </div>
         </div>
 
         {/* Footer Card */}
         <div className="bento-card col-span-2">
           <p className="text-gray-400 text-sm">
-            © 2024 • Crafted with ❤️ using React by Ahmad Faiz
+            © 2024 • Crafted with <span className="text-[#2ecc71]">❤️</span> using React by Ahmad Faiz
           </p>
         </div>
       </div>

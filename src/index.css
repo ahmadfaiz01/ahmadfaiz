@@ -11,9 +11,11 @@
     --foreground: 0 0% 100%;
     --card: 0 0% 10%;
     --border: 0 0% 14.9%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
+    --primary: 142 76% 36%;
+    --primary-foreground: 0 0% 98%;
     --radius: 0.75rem;
+    --accent-green: #2ecc71;
+    --light-green: rgba(46, 204, 113, 0.1);
   }
 
   * {
@@ -43,8 +45,27 @@
   flex-direction: column;
 }
 
+.bento-card:hover {
+  border-color: var(--accent-green);
+  box-shadow: 0 0 10px rgba(46, 204, 113, 0.15);
+  transform: translateY(-4px);
+}
+
 .social-link {
   @apply p-2 rounded-md border border-[#333] hover:bg-[#222] transition-colors;
+}
+
+.social-link:hover {
+  @apply border-[#2ecc71] text-[#2ecc71];
+}
+
+.accent-text {
+  color: var(--accent-green);
+}
+
+.accent-bg {
+  background-color: var(--light-green);
+  border: 1px solid var(--accent-green);
 }
 
 @media (max-width: 1024px) {
