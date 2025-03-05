@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Github, Linkedin, Mail, Twitter } from "lucide-react";
 
@@ -16,7 +17,7 @@ const Index = () => {
         <div className="bento-card col-span-2">
           <h2 className="text-sm text-gray-400 mb-2">welcome</h2>
           <h1 className="text-4xl font-bold mb-4">
-            Hi, I'm <span className="text-blue-400">Your Name</span>
+            Hi, I'm <span className="text-blue-400">Ahmad Faiz</span>
           </h1>
           <p className="text-gray-300 text-lg">
             A software developer with a passion for creating beautiful and functional web experiences
@@ -56,7 +57,7 @@ const Index = () => {
                className="p-3 rounded-full hover:bg-gray-800 transition-colors">
               <Github className="w-8 h-8" />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+            <a href="https://www.linkedin.com/in/ahmadfaiz01/" target="_blank" rel="noopener noreferrer"
                className="p-3 rounded-full hover:bg-gray-800 transition-colors">
               <Linkedin className="w-8 h-8" />
             </a>
