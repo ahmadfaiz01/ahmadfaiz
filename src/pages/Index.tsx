@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { Github, Linkedin, Mail, Twitter, Headphones, Code, Book, Coffee } from "lucide-react";
 
 const Index = () => {
   const [time, setTime] = useState(new Date());
@@ -47,6 +47,30 @@ const Index = () => {
           <p className="text-3xl font-bold font-mono">
             {time.toLocaleTimeString()}
           </p>
+        </div>
+
+        {/* Now Card */}
+        <div className="bento-card">
+          <h2 className="text-2xl font-bold mb-4">Now</h2>
+          <p className="text-gray-300 mb-6">What I'm currently doing:</p>
+          <div className="space-y-4">
+            <div className="flex items-center space-x-3">
+              <Code className="text-blue-400 w-6 h-6" />
+              <span className="text-gray-200">Building a web app with React</span>
+            </div>
+            <div className="flex items-center space-x-3">
+              <Book className="text-green-400 w-6 h-6" />
+              <span className="text-gray-200">Learning cloud architecture</span>
+            </div>
+            <div className="flex items-center space-x-3">
+              <Headphones className="text-purple-400 w-6 h-6" />
+              <span className="text-gray-200">Listening to tech podcasts</span>
+            </div>
+            <div className="flex items-center space-x-3">
+              <Coffee className="text-amber-400 w-6 h-6" />
+              <span className="text-gray-200">Drinking too much coffee</span>
+            </div>
+          </div>
         </div>
 
         {/* Contact Card */}
