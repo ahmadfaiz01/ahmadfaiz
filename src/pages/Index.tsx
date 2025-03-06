@@ -15,14 +15,23 @@ const Index = () => {
       <div className="bento-grid max-w-7xl mx-auto">
         {/* Welcome Card */}
         <div className="bento-card col-span-2 flex flex-col justify-between">
-          <div>
-            <h2 className="text-sm text-gray-400 mb-2">welcome</h2>
-            <h1 className="text-4xl font-bold mb-4 name-animation">
-              Hi, I'm <span className="accent-text">Ahmad Faiz</span>
-            </h1>
-            <p className="text-gray-300 text-lg">
-              A software developer with a passion for creating beautiful and functional web experiences
-            </p>
+          <div className="flex flex-col md:flex-row gap-6 items-start md:items-center">
+            <div className="profile-pic-container">
+              <img 
+                src="/lovable-uploads/2b2eda51-e81b-4990-b63e-12c3b8ea3490.png" 
+                alt="Ahmad Faiz" 
+                className="profile-pic w-24 h-24 rounded-full object-cover border-2 border-[#2ecc71]"
+              />
+            </div>
+            <div>
+              <h2 className="text-sm text-gray-400 mb-2">welcome</h2>
+              <h1 className="text-4xl font-bold mb-4 name-animation">
+                Hi, I'm <span className="accent-text">Ahmad Faiz</span>
+              </h1>
+              <p className="text-gray-300 text-lg">
+                A software developer with a passion for creating beautiful and functional web experiences
+              </p>
+            </div>
           </div>
           
           <div className="mt-8 flex space-x-4">
@@ -166,9 +175,11 @@ const Index = () => {
           </div>
           
           <div className="flex items-center justify-center mb-4">
-            <div className="w-12 h-12 rounded-full bg-[rgba(46,204,113,0.1)] flex items-center justify-center">
-              <span className="text-[#2ecc71] font-bold text-sm">NUST</span>
-            </div>
+            <img 
+              src="https://nust.edu.pk/wp-content/uploads/2020/04/NUST-Signature-01.png" 
+              alt="NUST Logo" 
+              className="h-16 object-contain"
+            />
           </div>
           
           <div className="text-center">

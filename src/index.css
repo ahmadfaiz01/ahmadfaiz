@@ -120,6 +120,30 @@
   animation: line-flow 2s infinite;
 }
 
+/* Profile picture animation */
+.profile-pic-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.profile-pic {
+  position: relative;
+  transition: transform 0.5s ease;
+  box-shadow: 0 0 15px rgba(46, 204, 113, 0.3);
+  animation: profile-slide-up 0.8s ease-out forwards;
+}
+
+@keyframes profile-slide-up {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 @keyframes line-flow {
   0% {
     background-position: -100% 0;
