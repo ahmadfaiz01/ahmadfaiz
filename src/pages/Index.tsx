@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { Github, Linkedin, Mail, Twitter, Headphones, Code, Book, Coffee, Globe, ArrowUpRight, Clock, MapPin, GraduationCap } from "lucide-react";
+import { Github, Linkedin, Mail, Twitter, Headphones, Code, Book, Coffee, Globe, ArrowUpRight, Clock, MapPin, GraduationCap, Flag } from "lucide-react";
 
 const Index = () => {
   const [time, setTime] = useState(new Date());
@@ -10,52 +10,52 @@ const Index = () => {
     return () => clearInterval(timer);
   }, []);
 
+  // Format hours and minutes with leading zeros
+  const hours = time.getHours().toString().padStart(2, '0');
+  const minutes = time.getMinutes().toString().padStart(2, '0');
+  const seconds = time.getSeconds().toString().padStart(2, '0');
+
   return (
     <div className="min-h-screen bg-[#121212] text-white p-4 md:p-8">
       <div className="bento-grid max-w-7xl mx-auto">
         {/* Welcome Card */}
-        <div className="bento-card col-span-2 flex flex-col justify-between">
-          <div className="flex flex-col md:flex-row gap-6 items-start md:items-center">
-            <div className="profile-pic-container">
-              <img 
-                src="/lovable-uploads/2b2eda51-e81b-4990-b63e-12c3b8ea3490.png" 
-                alt="Ahmad Faiz" 
-                className="profile-pic w-24 h-24 rounded-full object-cover border-2 border-[#2ecc71]"
-              />
-            </div>
-            <div>
-              <h2 className="text-sm text-gray-400 mb-2">welcome</h2>
-              <h1 className="text-4xl font-bold mb-4 name-animation">
-                Hi, I'm <span className="accent-text">Ahmad Faiz</span>
-              </h1>
-              <p className="text-gray-300 text-lg">
-                A software developer with a passion for creating beautiful and functional web experiences
-              </p>
+        <div className="bento-card col-span-2 flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="flex-1">
+            <h2 className="text-sm text-gray-400 mb-2">welcome</h2>
+            <h1 className="text-4xl font-bold mb-4 name-animation">
+              Hi, I'm <span className="accent-text">Ahmad Faiz</span>
+            </h1>
+            <p className="text-gray-300 text-lg mb-6">
+              A software developer with a passion for creating beautiful and functional web experiences
+            </p>
+            
+            <div className="flex space-x-6">
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+                <Github className="w-6 h-6" />
+              </a>
+              <a href="https://www.linkedin.com/in/ahmadfaiz01/" target="_blank" rel="noopener noreferrer" className="social-icon">
+                <Linkedin className="w-6 h-6" />
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+                <Twitter className="w-6 h-6" />
+              </a>
+              <a href="mailto:itsahmadfaiz22@gmail.com" className="social-icon">
+                <Mail className="w-6 h-6" />
+              </a>
             </div>
           </div>
           
-          <div className="mt-8 flex space-x-4">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" 
-              className="social-link">
-              <Github className="w-5 h-5" />
-            </a>
-            <a href="https://www.linkedin.com/in/ahmadfaiz01/" target="_blank" rel="noopener noreferrer"
-              className="social-link">
-              <Linkedin className="w-5 h-5" />
-            </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"
-              className="social-link">
-              <Twitter className="w-5 h-5" />
-            </a>
-            <a href="mailto:your@email.com"
-              className="social-link">
-              <Mail className="w-5 h-5" />
-            </a>
+          <div className="profile-pic-container">
+            <img 
+              src="/lovable-uploads/2b2eda51-e81b-4990-b63e-12c3b8ea3490.png" 
+              alt="Ahmad Faiz" 
+              className="profile-pic w-32 h-32 md:w-48 md:h-48 rounded-full object-cover border-2 border-[#2ecc71]"
+            />
           </div>
         </div>
 
         {/* About Card */}
-        <div className="bento-card row-span-2">
+        <div className="bento-card row-span-2 green-card">
           <h2 className="text-2xl font-bold mb-6">About me</h2>
           <p className="text-gray-300 mb-4">
             I'm Ahmad, a front-end software developer from Malaysia.
@@ -96,15 +96,18 @@ const Index = () => {
           <h2 className="text-xl font-bold mb-4">Time zone</h2>
           <div className="flex items-center space-x-2 mb-4">
             <Clock className="text-[#2ecc71] w-5 h-5" />
-            <p className="text-4xl font-mono font-bold">
-              {time.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false })}
-              {" "}
-              <span className="accent-text">PKT</span>
+            <p className="time-display">
+              <span className="accent">{hours}</span>:
+              <span className="accent">{minutes}</span>:
+              <span>{seconds}</span>
             </p>
           </div>
           <div className="flex items-center space-x-2">
             <MapPin className="text-[#2ecc71] w-5 h-5" />
-            <p className="text-gray-300">Islamabad, Pakistan</p>
+            <div className="flex items-center">
+              <p className="text-gray-300 mr-2">Islamabad, Pakistan</p>
+              <Flag className="text-[#2ecc71] w-4 h-4" />
+            </div>
           </div>
         </div>
 
@@ -114,24 +117,27 @@ const Index = () => {
           
           <div className="space-y-4 mt-6">
             <p className="text-sm text-gray-400">Contact Details</p>
-            <p className="text-gray-300">itsahmadfaiz22@gmail.com</p>
-            <p className="text-gray-300">Pakistan</p>
+            <a href="mailto:itsahmadfaiz22@gmail.com" className="text-[#2ecc71] hover:underline transition-all">itsahmadfaiz22@gmail.com</a>
+            <div className="flex items-center space-x-2">
+              <p className="text-gray-300">Pakistan</p>
+              <Flag className="text-[#2ecc71] w-4 h-4" />
+            </div>
           </div>
           
           <div className="space-y-1 mt-6">
             <p className="text-sm text-gray-400">Socials</p>
-            <div className="flex space-x-4 mt-2">
-              <a href="https://www.linkedin.com/in/ahmadfaiz01/" className="social-link-glow" target="_blank" rel="noopener noreferrer">
-                <Linkedin className="w-5 h-5" />
+            <div className="flex space-x-6 mt-2">
+              <a href="https://www.linkedin.com/in/ahmadfaiz01/" className="social-icon" target="_blank" rel="noopener noreferrer">
+                <Linkedin className="w-6 h-6" />
               </a>
-              <a href="https://github.com" className="social-link-glow" target="_blank" rel="noopener noreferrer">
-                <Github className="w-5 h-5" />
+              <a href="https://github.com" className="social-icon" target="_blank" rel="noopener noreferrer">
+                <Github className="w-6 h-6" />
               </a>
-              <a href="https://twitter.com" className="social-link-glow" target="_blank" rel="noopener noreferrer">
-                <Twitter className="w-5 h-5" />
+              <a href="https://twitter.com" className="social-icon" target="_blank" rel="noopener noreferrer">
+                <Twitter className="w-6 h-6" />
               </a>
-              <a href="mailto:itsahmadfaiz22@gmail.com" className="social-link-glow">
-                <Mail className="w-5 h-5" />
+              <a href="mailto:itsahmadfaiz22@gmail.com" className="social-icon">
+                <Mail className="w-6 h-6" />
               </a>
             </div>
           </div>
@@ -222,7 +228,7 @@ const Index = () => {
         </div>
 
         {/* Footer Card */}
-        <div className="bento-card col-span-2">
+        <div className="footer-card">
           <p className="text-gray-400 text-sm">
             © 2024 • Crafted with <span className="text-[#2ecc71]">❤️</span> using React by Ahmad Faiz
           </p>

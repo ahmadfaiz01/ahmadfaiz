@@ -1,6 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -24,7 +25,7 @@
   }
 
   body {
-    @apply bg-[#121212] text-foreground font-['Inter'] m-0 p-0;
+    @apply bg-[#121212] text-foreground font-['Montserrat'] m-0 p-0;
   }
 }
 
@@ -52,22 +53,13 @@
   transform: translateY(-4px);
 }
 
-.social-link {
-  @apply p-2 rounded-md border border-[#333] hover:bg-[#222] transition-colors;
+.social-icon {
+  @apply transition-all duration-300 text-gray-300;
 }
 
-.social-link:hover {
-  @apply border-[#2ecc71] text-[#2ecc71];
-}
-
-.social-link-glow {
-  @apply p-2 rounded-md border border-[#333] hover:bg-[#222] transition-all;
-  position: relative;
-}
-
-.social-link-glow:hover {
-  @apply border-[#2ecc71] text-[#2ecc71];
-  box-shadow: 0 0 10px rgba(46, 204, 113, 0.3);
+.social-icon:hover {
+  @apply text-[#2ecc71] transform scale-110;
+  filter: drop-shadow(0 0 5px rgba(46, 204, 113, 0.5));
 }
 
 .accent-text {
@@ -77,6 +69,12 @@
 .accent-bg {
   background-color: var(--light-green);
   border: 1px solid var(--accent-green);
+}
+
+.green-card {
+  background-color: var(--light-green);
+  border: 1px solid var(--accent-green);
+  box-shadow: 0 0 15px rgba(46, 204, 113, 0.15);
 }
 
 .project-card {
@@ -123,25 +121,21 @@
 /* Profile picture animation */
 .profile-pic-container {
   position: relative;
-  overflow: hidden;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .profile-pic {
   position: relative;
-  transition: transform 0.5s ease;
   box-shadow: 0 0 15px rgba(46, 204, 113, 0.3);
-  animation: profile-slide-up 0.8s ease-out forwards;
 }
 
-@keyframes profile-slide-up {
-  0% {
-    transform: translateY(20px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
+.footer-card {
+  @apply col-span-3 py-4 mt-2 flex justify-center items-center;
+  background-color: rgba(26, 26, 26, 0.6);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(46, 204, 113, 0.2);
 }
 
 @keyframes line-flow {
@@ -153,9 +147,21 @@
   }
 }
 
+.time-display {
+  @apply text-4xl font-mono font-bold;
+}
+
+.time-display .accent {
+  @apply text-[#2ecc71];
+}
+
 @media (max-width: 1024px) {
   .bento-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .footer-card {
+    col-span: 2;
   }
 }
 
@@ -167,5 +173,9 @@
   
   .bento-card {
     min-height: 150px;
+  }
+  
+  .footer-card {
+    col-span: 1;
   }
 }
