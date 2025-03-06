@@ -44,11 +44,11 @@ const Index = () => {
               </a>
             </div>
             
-            {/* Time zone information - with simplified design */}
+            {/* Time zone information - with bold text */}
             <div className="border-t border-[rgba(46,204,113,0.2)] pt-4">
               <div className="flex items-center space-x-2 mb-2">
                 <Clock className="text-[#2ecc71] w-4 h-4" />
-                <p className="text-base">
+                <p className="text-sm font-bold">
                   <span className="text-[#2ecc71]">{hours}</span>
                   <span className="text-[#2ecc71]">:</span>
                   <span className="text-[#2ecc71]">{minutes}</span>:
@@ -57,7 +57,7 @@ const Index = () => {
               </div>
               <div className="flex items-center space-x-2">
                 <MapPin className="text-[#2ecc71] w-4 h-4" />
-                <div className="flex items-center text-sm">
+                <div className="flex items-center text-sm font-bold">
                   <p className="text-gray-300 mr-2">Islamabad, Pakistan</p>
                   <span className="text-base">🇵🇰</span>
                 </div>
@@ -69,7 +69,7 @@ const Index = () => {
             <img 
               src="/lovable-uploads/2b2eda51-e81b-4990-b63e-12c3b8ea3490.png" 
               alt="Ahmad Faiz" 
-              className="profile-pic w-32 h-full md:w-48 rounded-xl object-cover border-2 border-[#2ecc71]"
+              className="profile-pic w-32 h-32 md:w-48 md:h-48 rounded-xl object-cover border-2 border-[#2ecc71]"
             />
           </div>
         </div>
@@ -107,10 +107,19 @@ const Index = () => {
           
           <div className="mt-6 border-t border-[rgba(46,204,113,0.2)] pt-4">
             <h3 className="text-xl font-bold mb-4 text-left">Education</h3>
-            <div className="text-left mb-4">
-              <h4 className="text-[#2ecc71] font-medium">NUST Islamabad</h4>
-              <p className="text-gray-300">BS Computer Sciences</p>
-              <p className="mt-1 text-xs text-gray-400">2023 - 2027</p>
+            <div className="text-left mb-4 flex items-center">
+              <div className="mr-3">
+                <img 
+                  src="https://upload.wikimedia.org/wikipedia/en/e/e4/National_University_of_Sciences_and_Technology_logo.png" 
+                  alt="NUST Logo" 
+                  className="w-8 h-8 object-contain"
+                />
+              </div>
+              <div>
+                <h4 className="text-[#2ecc71] font-medium">NUST Islamabad</h4>
+                <p className="text-gray-300">BS Computer Sciences</p>
+                <p className="mt-1 text-xs text-gray-400">2023 - 2027</p>
+              </div>
             </div>
           </div>
         </div>
@@ -145,7 +154,7 @@ const Index = () => {
           </div>
         </div>
 
-        {/* Let's Connect Card with subtle animation */}
+        {/* Let's Connect Card with shake animation */}
         <div className="bento-card connect-card relative overflow-hidden">
           <div className="connect-pulse absolute -right-4 -top-4 w-16 h-16 bg-[rgba(46,204,113,0.2)] rounded-full animate-pulse"></div>
           
@@ -182,29 +191,29 @@ const Index = () => {
           </div>
         </div>
 
-        {/* Work Experience Card (previously Education) */}
+        {/* Work Experience Card - updated to match certification card design */}
         <div className="bento-card">
           <div className="flex justify-between items-center mb-6">
             <h2 className="text-xl font-bold">Work Experience</h2>
             <GraduationCap className="w-5 h-5 text-[#2ecc71]" />
           </div>
           
-          <div className="text-left">
-            <div className="mb-4">
-              <h3 className="text-lg font-medium text-[#2ecc71]">Freelance Developer</h3>
-              <p className="text-gray-300">Web Development</p>
-              <p className="mt-2 px-3 py-1 rounded-full bg-[rgba(46,204,113,0.1)] text-[#2ecc71] text-sm inline-block">2022 - Present</p>
+          <div className="space-y-4">
+            <div className="certification-item p-3 rounded-lg bg-[rgba(46,204,113,0.05)] border border-[rgba(46,204,113,0.2)] transition-all hover:translate-y-[-2px]">
+              <h3 className="text-[#2ecc71] font-medium">Freelance Developer</h3>
+              <p className="text-sm text-gray-300">Web Development</p>
+              <p className="text-xs text-gray-400 mt-1">2022 - Present</p>
             </div>
             
-            <div className="mb-4">
-              <h3 className="text-lg font-medium text-[#2ecc71]">Tech Startup</h3>
-              <p className="text-gray-300">Frontend Developer</p>
-              <p className="mt-2 px-3 py-1 rounded-full bg-[rgba(46,204,113,0.1)] text-[#2ecc71] text-sm inline-block">2021 - 2022</p>
+            <div className="certification-item p-3 rounded-lg bg-[rgba(46,204,113,0.05)] border border-[rgba(46,204,113,0.2)] transition-all hover:translate-y-[-2px]">
+              <h3 className="text-[#2ecc71] font-medium">Tech Startup</h3>
+              <p className="text-sm text-gray-300">Frontend Developer</p>
+              <p className="text-xs text-gray-400 mt-1">2021 - 2022</p>
             </div>
           </div>
         </div>
 
-        {/* Projects Card - reverted to previous design */}
+        {/* Projects Card - previous design */}
         <div className="bento-card col-span-1">
           <div className="flex justify-between items-center mb-6">
             <h2 className="text-xl font-bold">Projects</h2>
