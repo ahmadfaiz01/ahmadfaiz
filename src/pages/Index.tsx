@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { Github, Linkedin, Mail, Twitter, Headphones, Code, Book, Coffee, Globe, ArrowUpRight, Clock, MapPin, Graduation } from "lucide-react";
+import { Github, Linkedin, Mail, Twitter, Headphones, Code, Book, Coffee, Globe, ArrowUpRight, Clock, MapPin, GraduationCap } from "lucide-react";
 
 const Index = () => {
   const [time, setTime] = useState(new Date());
@@ -162,7 +162,7 @@ const Index = () => {
         <div className="bento-card">
           <div className="flex justify-between items-center mb-6">
             <h2 className="text-xl font-bold">Education</h2>
-            <Graduation className="w-5 h-5 text-[#2ecc71]" />
+            <GraduationCap className="w-5 h-5 text-[#2ecc71]" />
           </div>
           
           <div className="flex items-center justify-center mb-4">
