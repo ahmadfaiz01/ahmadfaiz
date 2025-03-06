@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { Github, Linkedin, Mail, Twitter, Headphones, Code, Book, Coffee, Globe, ArrowUpRight, Clock, MapPin, GraduationCap, Flag } from "lucide-react";
+import { Github, Linkedin, Mail, Twitter, Headphones, Code, Book, Coffee, Globe, ArrowUpRight, Clock, MapPin, GraduationCap, Award } from "lucide-react";
 
 const Index = () => {
   const [time, setTime] = useState(new Date());
@@ -29,7 +29,7 @@ const Index = () => {
               A software developer with a passion for creating beautiful and functional web experiences
             </p>
             
-            <div className="flex space-x-6">
+            <div className="flex space-x-6 mb-6">
               <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="social-icon">
                 <Github className="w-6 h-6" />
               </a>
@@ -43,13 +43,33 @@ const Index = () => {
                 <Mail className="w-6 h-6" />
               </a>
             </div>
+            
+            {/* Time zone information - moved from separate card */}
+            <div className="border-t border-[rgba(46,204,113,0.2)] pt-4">
+              <h3 className="text-lg font-medium mb-2">Time zone</h3>
+              <div className="flex items-center space-x-2 mb-2">
+                <Clock className="text-[#2ecc71] w-5 h-5" />
+                <p className="time-display text-2xl">
+                  <span className="accent">{hours}</span>:
+                  <span className="accent">{minutes}</span>:
+                  <span>{seconds}</span>
+                </p>
+              </div>
+              <div className="flex items-center space-x-2">
+                <MapPin className="text-[#2ecc71] w-5 h-5" />
+                <div className="flex items-center">
+                  <p className="text-gray-300 mr-2">Islamabad, Pakistan</p>
+                  <span className="text-xl">🇵🇰</span>
+                </div>
+              </div>
+            </div>
           </div>
           
-          <div className="profile-pic-container">
+          <div className="profile-pic-container h-full">
             <img 
               src="/lovable-uploads/2b2eda51-e81b-4990-b63e-12c3b8ea3490.png" 
               alt="Ahmad Faiz" 
-              className="profile-pic w-32 h-32 md:w-48 md:h-48 rounded-full object-cover border-2 border-[#2ecc71]"
+              className="profile-pic w-32 h-full md:w-48 rounded-xl object-cover border-2 border-[#2ecc71]"
             />
           </div>
         </div>
@@ -91,59 +111,7 @@ const Index = () => {
           </p>
         </div>
 
-        {/* Time Card */}
-        <div className="bento-card">
-          <h2 className="text-xl font-bold mb-4">Time zone</h2>
-          <div className="flex items-center space-x-2 mb-4">
-            <Clock className="text-[#2ecc71] w-5 h-5" />
-            <p className="time-display">
-              <span className="accent">{hours}</span>:
-              <span className="accent">{minutes}</span>:
-              <span>{seconds}</span>
-            </p>
-          </div>
-          <div className="flex items-center space-x-2">
-            <MapPin className="text-[#2ecc71] w-5 h-5" />
-            <div className="flex items-center">
-              <p className="text-gray-300 mr-2">Islamabad, Pakistan</p>
-              <Flag className="text-[#2ecc71] w-4 h-4" />
-            </div>
-          </div>
-        </div>
-
-        {/* Let's Connect Card */}
-        <div className="bento-card">
-          <h2 className="text-2xl font-bold mb-4">Let's connect!</h2>
-          
-          <div className="space-y-4 mt-6">
-            <p className="text-sm text-gray-400">Contact Details</p>
-            <a href="mailto:itsahmadfaiz22@gmail.com" className="text-[#2ecc71] hover:underline transition-all">itsahmadfaiz22@gmail.com</a>
-            <div className="flex items-center space-x-2">
-              <p className="text-gray-300">Pakistan</p>
-              <Flag className="text-[#2ecc71] w-4 h-4" />
-            </div>
-          </div>
-          
-          <div className="space-y-1 mt-6">
-            <p className="text-sm text-gray-400">Socials</p>
-            <div className="flex space-x-6 mt-2">
-              <a href="https://www.linkedin.com/in/ahmadfaiz01/" className="social-icon" target="_blank" rel="noopener noreferrer">
-                <Linkedin className="w-6 h-6" />
-              </a>
-              <a href="https://github.com" className="social-icon" target="_blank" rel="noopener noreferrer">
-                <Github className="w-6 h-6" />
-              </a>
-              <a href="https://twitter.com" className="social-icon" target="_blank" rel="noopener noreferrer">
-                <Twitter className="w-6 h-6" />
-              </a>
-              <a href="mailto:itsahmadfaiz22@gmail.com" className="social-icon">
-                <Mail className="w-6 h-6" />
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/* Now Card */}
+        {/* Now Card (moved to where timezone card was) */}
         <div className="bento-card accent-bg">
           <div className="flex items-center mb-4">
             <h2 className="text-xl font-bold">Now</h2>
@@ -169,6 +137,43 @@ const Index = () => {
             <div className="flex items-center space-x-3">
               <Coffee className="text-[#2ecc71] w-5 h-5" />
               <span className="text-gray-300">Drinking too much coffee</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Let's Connect Card with animation */}
+        <div className="bento-card connect-card relative overflow-hidden">
+          <div className="connect-pulse absolute -right-4 -top-4 w-16 h-16 bg-[rgba(46,204,113,0.2)] rounded-full animate-pulse"></div>
+          
+          <h2 className="text-2xl font-bold mb-4 connect-title">Let's connect!</h2>
+          
+          <div className="space-y-4 mt-6">
+            <p className="text-sm text-gray-400">Contact Details</p>
+            <a href="mailto:itsahmadfaiz22@gmail.com" className="text-[#2ecc71] hover:underline transition-all flex items-center">
+              <Mail className="w-5 h-5 mr-2" />
+              itsahmadfaiz22@gmail.com
+            </a>
+            <div className="flex items-center space-x-2">
+              <p className="text-gray-300">Pakistan</p>
+              <span className="text-xl">🇵🇰</span>
+            </div>
+          </div>
+          
+          <div className="space-y-1 mt-6">
+            <p className="text-sm text-gray-400">Socials</p>
+            <div className="flex space-x-6 mt-2">
+              <a href="https://www.linkedin.com/in/ahmadfaiz01/" className="social-icon" target="_blank" rel="noopener noreferrer">
+                <Linkedin className="w-6 h-6" />
+              </a>
+              <a href="https://github.com" className="social-icon" target="_blank" rel="noopener noreferrer">
+                <Github className="w-6 h-6" />
+              </a>
+              <a href="https://twitter.com" className="social-icon" target="_blank" rel="noopener noreferrer">
+                <Twitter className="w-6 h-6" />
+              </a>
+              <a href="mailto:itsahmadfaiz22@gmail.com" className="social-icon">
+                <Mail className="w-6 h-6" />
+              </a>
             </div>
           </div>
         </div>
@@ -227,7 +232,35 @@ const Index = () => {
           </div>
         </div>
 
-        {/* Footer Card */}
+        {/* New Certifications Card */}
+        <div className="bento-card">
+          <div className="flex justify-between items-center mb-6">
+            <h2 className="text-xl font-bold">Certifications</h2>
+            <Award className="w-5 h-5 text-[#2ecc71]" />
+          </div>
+          
+          <div className="space-y-4">
+            <div className="certification-item p-3 rounded-lg bg-[rgba(46,204,113,0.05)] border border-[rgba(46,204,113,0.2)] transition-all hover:translate-y-[-2px]">
+              <h3 className="text-[#2ecc71] font-medium">React Advanced</h3>
+              <p className="text-sm text-gray-300">Meta Frontend Development</p>
+              <p className="text-xs text-gray-400 mt-1">2023</p>
+            </div>
+            
+            <div className="certification-item p-3 rounded-lg bg-[rgba(46,204,113,0.05)] border border-[rgba(46,204,113,0.2)] transition-all hover:translate-y-[-2px]">
+              <h3 className="text-[#2ecc71] font-medium">Full Stack Development</h3>
+              <p className="text-sm text-gray-300">Coursera</p>
+              <p className="text-xs text-gray-400 mt-1">2022</p>
+            </div>
+            
+            <div className="certification-item p-3 rounded-lg bg-[rgba(46,204,113,0.05)] border border-[rgba(46,204,113,0.2)] transition-all hover:translate-y-[-2px]">
+              <h3 className="text-[#2ecc71] font-medium">UI/UX Design</h3>
+              <p className="text-sm text-gray-300">Google</p>
+              <p className="text-xs text-gray-400 mt-1">2022</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Footer Card - now spans the full width */}
         <div className="footer-card">
           <p className="text-gray-400 text-sm">
             © 2024 • Crafted with <span className="text-[#2ecc71]">❤️</span> using React by Ahmad Faiz

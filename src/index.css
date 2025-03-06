@@ -133,9 +133,69 @@
 
 .footer-card {
   @apply col-span-3 py-4 mt-2 flex justify-center items-center;
-  background-color: rgba(26, 26, 26, 0.6);
+  background-color: rgba(26, 26, 26, 0.8);
   backdrop-filter: blur(10px);
   border-top: 1px solid rgba(46, 204, 113, 0.2);
+  width: 100%;
+}
+
+/* Let's Connect Card animations */
+.connect-card {
+  position: relative;
+}
+
+.connect-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.connect-title {
+  position: relative;
+  display: inline-block;
+}
+
+.connect-title::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #2ecc71;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease-in-out;
+  animation: connectPulse 2s infinite;
+}
+
+.connect-card:hover .connect-title::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+@keyframes connectPulse {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.7);
+  }
+  
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(46, 204, 113, 0);
+  }
+  
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(46, 204, 113, 0);
+  }
 }
 
 @keyframes line-flow {
@@ -153,6 +213,10 @@
 
 .time-display .accent {
   @apply text-[#2ecc71];
+}
+
+.certification-item {
+  transition: all 0.3s ease;
 }
 
 @media (max-width: 1024px) {
